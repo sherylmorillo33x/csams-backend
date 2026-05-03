@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CSAMS — College Student Access Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="screen active">
+  <div class="grid-bg"></div>
+  <div class="login-card">
+    <div class="login-top">
+      <div class="seal">CSAMS</div>
+      <div>
+        <h1>College Student Access Management System</h1>
+        <p>Student Access Management System</p>
+      </div>
+    </div>
+    <div class="gold-bar"></div>
+    <div class="login-body">
+      <h2>Sign In</h2>
+      <p class="sub">Enter your credentials to continue.</p>
+      <div class="field"><label>Username</label><input id="uname" type="text" placeholder="username" autocomplete="username"/></div>
+      <div class="field"><label>Password</label><input id="upass" type="password" placeholder="••••••••" autocomplete="current-password"/></div>
+      <div id="loginErr" class="msg err hidden">Invalid username or password.</div>
+      <button id="loginBtn" onclick="doLogin()" class="btn-main">Sign In</button>
+      <p class="hint"><b>admin</b>/admin2026 &nbsp;|&nbsp; <b>instructor</b>/inst2026 &nbsp;|&nbsp; <b>student1</b>/stu2026</p>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appScreen" class="screen">
+  <aside id="sidebar">
+    <div class="sb-head">
+      <div class="seal sm">CSAMS</div>
+      <div><strong>CSAMS</strong><small>Student Access Management</small></div>
+    </div>
+    <nav id="sideNav"></nav>
+    <div class="sb-foot">
+      <div class="avatar" id="ava">?</div>
+      <div class="sb-user"><strong id="nameLabel">—</strong><small id="roleLabel">—</small></div>
+      <button onclick="doLogout()" class="logout-btn" title="Logout">&#9211;</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button onclick="toggleSidebar()" class="tog">&#9776;</button>
+      <span>College Student Access Management System</span>
+      <button onclick="doLogout()" class="logout-sm">&#9211;</button>
+    </div>
+    <div id="content" class="content"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal-bg hidden" onclick="closeModal(event)">
+  <div class="modal-box" id="modalBox"></div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
